@@ -12,4 +12,4 @@
 
 ## Dry Run
 
-Edit `/usr/share/hmc/php/conf` and set `$GLOBALS["DRYRUN"] = FALSE;` to `TRUE`.  Restart HMC and it will be in dry run mode.
+Edit `/usr/share/hmc/php/conf/Config.inc` and set `$GLOBALS["DRYRUN"] = FALSE;` to `TRUE`.  Restart HMC and it will be in dry run mode.

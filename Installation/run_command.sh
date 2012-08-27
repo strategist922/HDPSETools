@@ -6,7 +6,9 @@ txtrst=$(${TPUT} sgr0)             # Reset
 
 for host in `cat Hostdetail.txt`; do
   echo -e "${txtbld}\n######################################################"
-  echo -e "# Copying $1 to Path: $2 on Host: $host"
+  echo -e "# Running command $1 on Host: $host"
   echo "######################################################${txtrst}"
-  scp $i root@$host:$2
+  ssh root@$host COMMAND="'$1'" 'bash -s' << 'END'
+	$COMMAND
+END
 done

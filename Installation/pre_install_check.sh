@@ -1,5 +1,4 @@
 #!/bin/bash
-SSHKEY=/tmp/ec2-keypair.pem
 TPUT='tput -T xterm-color'
 txtund=$(${TPUT} sgr 0 1)          # Underline
 txtbld=$(${TPUT} bold)             # Bold
@@ -9,7 +8,7 @@ for host in `cat Hostdetail.txt`; do
   echo -e "${txtbld}\n######################################################"
   echo -e "# Checking Host: $host"
   echo "######################################################${txtrst}"
-  ssh -i $SSHKEY root@$host 'bash -s' << 'END'
+  ssh root@$host 'bash -s' << 'END'
   function printHeading() {
     echo -e "\n${txtund}[*] $1 \n######################################################${txtrst}"
   }

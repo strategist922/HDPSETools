@@ -56,7 +56,7 @@ Output:
 * productname
 * ps
 * puppetversion
-* rubysitedir
+* rubysitedirw
 * rubyversion
 * selinux
 * serialnumber

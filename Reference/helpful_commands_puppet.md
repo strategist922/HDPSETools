@@ -1,5 +1,37 @@
 # References
 
+## Puppet Configuration
+
+Printing the module path
+
+Command: `puppet apply --configprint modulepath`
+
+## Puppet Kick
+
+puppet kick --host **host** --ping
+
+## Puppet CA
+
+List Certs
+
+Command: `puppetca --list --all`
+
+Revoke a Cert
+
+Command: `puppetca revoke ` **host**
+
+Sign a Cert
+
+Command: `puppetca sign ` **host**
+
+Clean all certs
+
+Command: `puppetca --clean --all`
+
+Re-exchange keys between an agent and a master
+
+Command: `puppetd -tv --server=`**hmc master**
+
 ## Facter
 
 Listing the facts about the machine on which puppet will perform the application of the manifest.  Each of these commands can be used by referencing them with ${variableName} from within a manifest.
@@ -73,14 +105,6 @@ Output:
 * uptime_seconds
 * virtual
 
-## Puppet Configuration
+## Puppet References
 
-Printing the module path
-
-Command: `puppet apply --configprint modulepath`
-
-## Puppet Kick
-
-## Puppet CA
-
-## Puppet
+[Puppet SSL Explained](http://www.masterzen.fr/2010/11/14/puppet-ssl-explained/)

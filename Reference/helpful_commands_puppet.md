@@ -32,6 +32,10 @@ Re-exchange keys between an agent and a master
 
 Command: `puppetd -tv --server=`**hmc master**
 
+## Puppet lock file
+
+rm /var/lib/puppet/state/puppetdlock
+
 ## Facter
 
 Listing the facts about the machine on which puppet will perform the application of the manifest.  Each of these commands can be used by referencing them with ${variableName} from within a manifest.

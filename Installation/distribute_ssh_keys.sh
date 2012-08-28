@@ -10,11 +10,11 @@ else
 	  echo -e "${txtbld}\n######################################################"
 	  echo -e "# Copying Key: $1 to Host: $host"
 	  echo "######################################################${txtrst}"
-	  ssh -i /tmp/ec2-keypair.pem root@$host 'bash -s' << 'END'
+	  ssh root@$host 'bash -s' << 'END'
 	    if [ ! -d ~/.ssh ]; then
 		mkdir ~/.ssh
 	    fi
 END
-	  cat $1| ssh -i /tmp/ec2-keypair.pem root@$host 'cat >> ~/.ssh/authorized_keys'
+	  cat $1| ssh root@$host 'cat >> ~/.ssh/authorized_keys'
 	done
 fi

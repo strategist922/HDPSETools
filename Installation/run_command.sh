@@ -12,6 +12,6 @@ else
 	  echo "######################################################${txtrst}"
 	  ssh root@$host COMMAND="'$1'" 'bash -s' << 'END'
 	        $COMMAND
-	END
+END
 	done
 fi

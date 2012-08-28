@@ -1,3 +1,10 @@
+# Downloading from client machine
+
+* wget https://github.com/pcodding/HDPSETools/zipball/master -O tools.zip
+* unzip tools.zip
+* mv pc\*/Installation/\*.sh .
+* chmod u+x *.sh
+
 # SE Tool Command examples
 
 ## Run Command

@@ -14,7 +14,7 @@ else
 	    if [ ! -d ~/.ssh ]; then
 		mkdir ~/.ssh
 	    fi
-	END
+END
 	  cat $1| ssh -i /tmp/ec2-keypair.pem root@$host 'cat >> ~/.ssh/authorized_keys'
 	done
 fi

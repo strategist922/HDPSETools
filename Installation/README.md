@@ -9,7 +9,7 @@
 
 ## Run Command
 
-Disable SELinux on all nodes
+Look at hostname resolution on all nodes
 
 `./run_command.sh 'hostname -f'`
 

@@ -20,3 +20,7 @@ Look at hostname resolution on all nodes
 ## Distribute SSH Keys
 
 `./distribute_ssh_keys.sh /root/.ssh/id_dsa.pub`
+
+## Kick Nodes
+
+`./kick_nodes.sh`

@@ -1,6 +1,6 @@
 # Installing R
 
-This documentation lists how to install R, rmr, rhdfs, and rhbase (work in progress) on an HDP 1.1 deployment.  Before you begin, please make sure you have downloaded R (if you plan to build it from source vs RPM), rmr, rhdfs, and rhbase from the [RHadoop GitHub Repo](https://github.com/RevolutionAnalytics/RHadoop/wiki/Downloads).  For convenience you can use the scripts in this repo to automate the installation process.
+This documentation lists how to install R, rmr, and rhdfs on an HDP 1.1 deployment.  Before you begin, please make sure you have downloaded R (if you plan to build it from source vs RPM), rmr, and rhdfs from the [RHadoop GitHub Repo](https://github.com/RevolutionAnalytics/RHadoop/wiki/Downloads).  For convenience you can use the scripts in this repo to automate the installation process.
 
 ## Mandatory Environmental Variables
 
@@ -82,7 +82,7 @@ This documentation lists how to install R, rmr, rhdfs, and rhbase (work in progr
 	> q()
 	Save workspace image? [y/n/c]: n
 	
-## Install R projects (excluding rhbase)
+## Install R projects
 
 	# echo 'options(repos=structure(c(CRAN="http://cran.stat.ucla.edu")))' >> /root/.Rprofile
 	# Rscript -e 'install.packages("RJSONIO");'
@@ -93,16 +93,6 @@ This documentation lists how to install R, rmr, rhdfs, and rhbase (work in progr
 	# R CMD javareconf
 	# Rscript -e 'install.packages("rJava");'
 	# R CMD INSTALL rhdfs /path/to/rhdfs_1.0.5.tar.gz
-	
-## Installing rhbase (work in progress)
-
-### Install Apache Thrift
-	# gunzip thrift-0.8.0.tar.gz
-	# tar -xvf thrift-0.8.0.tar
-	# cd thrift-0.8.0
-	
-### Install rhbase
-	# R CMD INSTALL rhbase rhbase_1.0.4.tar.gz
 	
 # RHadoop Validation
 Execute these commands from R
@@ -119,15 +109,11 @@ Execute these commands from R
 	print(result())
 	print(from.dfs(result, to.data.frame=T))
 	
-# Creating an RPM (RHEL 6.3)
-	yum -y install yum-utils rpmlint
-	yumdownloader --source R
-	rpm -ivh R-2.15.1-1.el6.src.rpm
-	cd ~/rpmbuild/SPECS
-	vi R.spec
+# Installing RStudio Server (Optional)
 
-Edit the configure options to add customer-specific modules/libraries.  Then use rpmlint to check that there are no errors with the spec file.
-	rpmlint R.spec
-	
-	Install deps
-	tex texinfo-tex libpng-devel libjpeg-devel tcl-devel tk-devel blas pcre-devel zlib-devel java-1.5.0-gcj lapack-devel libSM-devel libX11-devel libICE-devel libXt-devel bzip2-devel libXmu-devel cairo-devel libtiff-devel gcc-objc pango-devel libicu-devel
+	# yum install openssl098e
+	# yum install compat-libgfortran-41
+	# wget http://download2.rstudio.org/rstudio-server-0.96.331-x86_64.rpm
+	# rpm -ivh rstudio-server-0.96.331-x86_64.rpm
+
+Now refer to the [R-Studio Getting Started guide](http://rstudio.org/docs/server/getting_started)

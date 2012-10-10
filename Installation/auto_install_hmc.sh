@@ -48,7 +48,7 @@ else
 	if [ $OS_VERSION -eq 5 ]; then
 		rpm -Uvh http://public-repo-1.hortonworks.com/HDP-1.1.1.16/repos/centos5/hdp-release-1.1.1.16-1.el5.noarch.rpm
 		yum -y install epel-release
-		yum install php-pecl-json
+		yum -y install php-pecl-json
 	else
 		rpm -Uvh http://public-repo-1.hortonworks.com/HDP-1.1.0.15/repos/centos6/hdp-release-1.1.0.15-1.el6.noarch.rpm
 		yum -y install epel-release

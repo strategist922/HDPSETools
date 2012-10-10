@@ -22,7 +22,7 @@ vi /etc/selinux/config
 ./run_command.sh 'yum -y install net-snmp net-snmp-utils ntpd'
 ./run_command.sh 'reboot'
 ./run_command.sh 'service ntpd start'
-cd /root/hdp && ./pre_install_check.sh > out
+./pre_install_check.sh > out
 # rpm -Uvh http://public-repo-1.hortonworks.com/HDP-1.1.0.15/repos/centos6/hdp-release-1.1.0.15-1.el6.noarch.rpm
 # yum install epel-release
 # yum install hmc

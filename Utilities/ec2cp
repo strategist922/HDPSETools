@@ -1,0 +1,10 @@
+#!/bin/bash
+BASE_DIR="$( cd -P "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+echo $BASE_DIR
+. $BASE_DIR/config.sh
+if [ $# -ne 3 ]; then
+	echo "Need srcfile destpath host as args"
+else
+	echo "Copying file $1 to path $2 on host $3 as root using key `basename $SSH_KEY`"
+	scp -i $SSH_KEY $1 root@$3:$2
+fi

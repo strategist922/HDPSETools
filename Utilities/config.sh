@@ -1,0 +1,1 @@
+SSH_KEY=/path/to/ec2-keypair.pem

@@ -1,0 +1,6 @@
+#!/bin/bash
+BASE_DIR="$( cd -P "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+echo $BASE_DIR
+. $BASE_DIR/config.sh
+echo "Logging you into $1 as root using key `basename $SSH_KEY`"
+sftp -i $SSH_KEY root@$1

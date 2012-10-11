@@ -29,11 +29,7 @@ if [ ! -d /root/hdp ]; then
 	./run_command.sh 'iptables -vnL'
 	./run_command.sh 'yum -y erase mysql-libs'
 	./run_command.sh 'yum -y install net-snmp net-snmp-utils'
-	if [ $OS_VERSION -eq 5 ]; then
-		./run_command.sh 'yum -y install ntp'
-	else
-		./run_command.sh 'yum -y install ntpd'
-	fi
+	./run_command.sh 'yum -y install ntp'
 	read -p " I'm going to reboot all of these servers, is that ok? [y/n] " REBOOT
 	if [ $REBOOT == "y" ]; then
 		./run_command.sh 'reboot'

@@ -18,7 +18,7 @@
 HDPSETools
 ==========
 
-This is a common place for simple tools that the field engineering team @ [Hortonworks](http://hortonworks.com).  The current tools that are in the repo are:
+This is a common place for simple tools that the field engineering team @ [Hortonworks](http://hortonworks.com).  These tools are community supported, and meant to be used as simple utilities and informal reference.  The current tools that are in the repo are:
 
 ## Installation
 
@@ -27,3 +27,7 @@ This is a common place for simple tools that the field engineering team @ [Horto
 ## Reference
 
 The reference directory is an easy place to put helpful commands for different projects.
+
+## Utilities
+
+These utilities are for those that are lazy about typing.  These are just wrapper scripts that you can use to connect to and copy data in and out of EC2 instances.
